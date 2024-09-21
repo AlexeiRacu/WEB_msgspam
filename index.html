@@ -1,0 +1,236 @@
+добавь описание для разных классов покупок (не в карточках а по нажатию подробнее на них, или соответсвующие элементы в шапке сайта) для каждого элемента должно открываться описание в отдельной страничке (можешь не описыавть либо опиши абстракто я потом исправлю) в каждой страничке у каждых классов должна быть кнопка связаться для покупки помимо описания которая будет ввести по ссылке https://t.me/alexeiracu
+
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+
+/* Стили шапки */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo h1 {
+    margin: 0;
+    color: #0066cc;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #0066cc;
+}
+
+.telegram-button a {
+    background-color: #0088cc;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.telegram-button a:hover {
+    background-color: #0077b3;
+}
+
+/* Основные стили */
+.subscription-plans {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.plan {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 20px;
+    flex: 1 1 300px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    scroll-margin-top: 100px; /* Для плавной прокрутки */
+}
+
+.plan:hover {
+    transform: translateY(-10px);
+}
+
+.plan h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.image-container {
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.plan img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.plan .price {
+    font-size: 20px;
+    color: #666;
+    margin: 15px 0;
+}
+
+.plan button {
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.plan button:hover {
+    background-color: #005bb5;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #f0f2f5;
+    color: #666;
+    margin-top: 30px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .subscription-plans {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan {
+        max-width: none;
+        width: 80%;
+    }
+}
+
+function purchase(plan) {
+    alert(`Вы выбрали подписку: msgspam ${plan}`);
+    // Здесь можно добавить логику для обработки покупки
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Подписка на msgspam</title>
+    <link rel="stylesheet" href="style.css">
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>msgspam</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#trial">Trial</a></li>
+                    <li><a href="#plus">Plus</a></li>
+                    <li><a href="#ultimate">Ultimate</a></li>
+                </ul>
+            </nav>
+            <div class="telegram-button">
+                <a href="https://t.me/your_telegram_channel" target="_blank">Мы в Telegram</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="subscription-plans">
+        <!-- Пробная подписка -->
+        <div class="plan trial" id="trial">
+            <h2>msgspam Trial</h2>
+            <div class="image-container">
+                <img src="https://avatars.mds.yandex.net/get-shedevrum/11270697/2122354bea7b11eea244fa3bbea4aa60/orig" alt="Trial Plan">
+            </div>
+            <p class="price">Попробовать за 19₽</p>
+            <button onclick="purchase('Trial')">Купить</button>
+        </div>
+
+        <!-- Стандартная подписка -->
+        <div class="plan plus" id="plus">
+            <h2>msgspam Plus</h2>
+            <div class="image-container">
+                <img src="https://masterpiecer-images.s3.yandex.net/d635ecf393f711ee9f7e92669a1675b3:upscaled" alt="Plus Plan">
+            </div>
+            <p class="price">Подписаться за 299₽ в месяц</p>
+            <button onclick="purchase('Plus')">Купить</button>
+        </div>
+
+        <!-- Премиальная подписка -->
+        <div class="plan ultimate" id="ultimate">
+            <h2>msgspam Ultimate</h2>
+            <div class="image-container">
+                <img src="https://u.livelib.ru/album/1006095692/o/3pcdymj7/o-o.jpeg" alt="Ultimate Plan">
+            </div>
+            <p class="price">Подписаться за 699₽ в месяц</p>
+            <button onclick="purchase('Ultimate')">Купить</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 msgspam</p>
+    </footer>
+
+    <script src="script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
