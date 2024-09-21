@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>MSGspam</title>
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="logo.png" alt="Логотип msgspam" class="logo-image"> <!-- Логотип -->
+            <h1>MSGspam</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="purchase('Trial')">Trial</a></li>
+                <li><a href="#" onclick="purchase('Plus')">Plus</a></li>
+                <li><a href="#" onclick="purchase('Ultimate')">Ultimate</a></li>
+            </ul>
+        </nav>
+        <div class="telegram-button">
+            <a href="https://t.me/msgspam" target="_blank">
+                <img src="https://madbid.com/uploads/1708718087_.png" alt="Telegram" class="telegram-logo"> <!-- Логотип Telegram -->
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="subscription-plans">
+    <!-- Пробная подписка -->
+    <div class="plan trial" id="trial">
+        <h2>MSGspam Trial</h2>
+        <div class="image-container">
+            <img src="https://avatars.mds.yandex.net/get-shedevrum/11270697/2122354bea7b11eea244fa3bbea4aa60/orig" alt="Trial Plan">
+        </div>
+        <p class="price">Попробовать за 19₽</p>
+        <button onclick="purchase('Trial')">Подробнее</button>
+    </div>
+
+    <!-- Стандартная подписка -->
+    <div class="plan plus" id="plus">
+        <h2>MSGspam Plus</h2>
+        <div class="image-container">
+            <img src="https://masterpiecer-images.s3.yandex.net/d635ecf393f711ee9f7e92669a1675b3:upscaled" alt="Plus Plan">
+        </div>
+        <p class="price">Подписаться за 299₽ в месяц</p>
+        <button onclick="purchase('Plus')">Подробнее</button>
+    </div>
+
+    <!-- Премиальная подписка -->
+    <div class="plan ultimate" id="ultimate">
+        <h2>MSGspam Ultimate</h2>
+        <div class="image-container">
+            <img src="https://u.livelib.ru/album/1006095692/o/3pcdymj7/o-o.jpeg" alt="Ultimate Plan">
+        </div>
+        <p class="price">Подписаться за 699₽ в месяц</p>
+        <button onclick="purchase('Ultimate')">Подробнее</button>
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <a href="https://t.me/alexeiracu" class="telegram-link">Связаться для покупки ключа доступа</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 - msgspam<br>
+        Единственный сервис для автоматизированной рассылки сообщений в Telegram и VK.
+    </p>
+</footer>
+
+<script src="script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
