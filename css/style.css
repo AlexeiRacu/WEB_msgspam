@@ -48,17 +48,12 @@ nav ul li a:hover {
 
 .telegram-button a {
     display: inline-block;
-    background-color: #0088cc;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
 }
 
-.telegram-button a:hover {
-    background-color: #0077b3;
+/* Стили для логотипа Telegram */
+.telegram-logo {
+    height: 40px; /* Установите нужную высоту для логотипа */
+    vertical-align: middle; /* Вертикальное выравнивание */
 }
 
 /* Основные стили */
@@ -136,28 +131,31 @@ footer {
 /* Стили для модального окна */
 .modal {
     display: none; /* Скрыто по умолчанию */
-    position: fixed;
-    z-index: 1;
-    left: 0;
+    position: fixed; /* Фиксированное положение */
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px); /* Размытие фона */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    backdrop-filter: blur(5px);
+    z-index: 1; /* На переднем плане */
+    overflow: auto; /* Включает прокрутку */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 0 auto;
-    padding: 40px; /* Увеличенное пространство */
+    margin: auto; /* Центруем окно */
+    padding: 40px; /* Внутренние отступы */
     border: 1px solid #888;
-    width: 90%;
-    max-width: 600px; /* Увеличенная ширина */
+    width: 90%; /* Ширина окна */
+    max-width: 600px; /* Максимальная ширина окна */
     border-radius: 10px; /* Закругление углов */
-    transform: translateY(100%); /* Начальное положение для анимации */
     animation: slide-up 0.5s forwards; /* Анимация появления */
-    text-align: center; /* Выравнивание текста по центру */
+    text-align: center; /* Центрирование текста */
+    position: absolute;  /* Позиция для центрирования */
+    top: 50%; /* Вертикальная позиция */
+    left: 50%; /* Горизонтальная позиция */
+    transform: translate(-50%, -50%); /* Центрирование */
 }
 
 .modal-content h2 {
@@ -185,16 +183,16 @@ footer {
 /* Анимация появления модального окна */
 @keyframes slide-up {
     from {
-        transform: translateY(100%);
+        transform: translate(-50%, calc(-50% + 50px)); /* Начальное положение ниже центра */
     }
     to {
-        transform: translateY(0);
+        transform: translate(-50%, -50%); /* Конечное положение по центру */
     }
 }
 
 .telegram-link {
     display: inline-block;
-    background-color: #0088cc;
+    background-color: #0066cc;
     color: #fff;
     padding: 15px 30px; /* Увеличенные отступы */
     text-decoration: none;
@@ -205,7 +203,7 @@ footer {
 }
 
 .telegram-link:hover {
-    background-color: #0077b3;
+    background-color: #005bb5;
 }
 
 /* Адаптивность */
@@ -233,4 +231,19 @@ footer {
         max-width: none;
         width: 80%;
     }
+}
+
+/* Стили для логотипа */
+.logo {
+    display: flex;
+    align-items: center; /* Выравнивание по центру для текста и логотипа */
+}
+
+.logo-image {
+    height: 50px; /* Установите высоту изображения */
+    margin-right: 10px; /* Отступ между логотипом и текстом */
+}
+.text-spacing {
+    display: block; /* Делает элемент блочным, чтобы создать отступы */
+    margin: 20px 0; /* Устанавливает отступы */
 }
