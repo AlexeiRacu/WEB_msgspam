@@ -1,6 +1,6 @@
 /* Общие стили */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Один шрифт */
     margin: 0;
     padding: 0;
     background-color: #f0f2f5;
@@ -15,12 +15,23 @@ header {
 .header-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
+    align-items: center; /* Центруем элементы по вертикали */
+    padding: 10px 30px; /* Отступы */
+    margin-bottom: 0; /* Убираем нижний отступ */
 }
 
-.logo h1 {
-    margin: 0;
+.logo {
+    display: flex;
+    align-items: center; /* Центрируем логотип и текст */
+}
+
+.logo-image {
+    height: 40px; /* Установите одинаковую высоту для логотипа */
+    margin-right: 10px; /* Отступ между логотипом и текстом */
+}
+
+h1 {
+    margin: 0; /* Убираем отступы по умолчанию */
     color: #0066cc;
 }
 
@@ -32,7 +43,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 20px; /* Разделяем пункты меню */
 }
 
 nav ul li a {
@@ -56,7 +67,77 @@ nav ul li a:hover {
     vertical-align: middle; /* Вертикальное выравнивание */
 }
 
-/* Основные стили */
+/* Стили боковой панели */
+.side-panel {
+    position: fixed; /* Фиксированное положение */
+    left: 0; /* Прилепляем к левой части экрана */
+    top: 0; /* Позиционируем с самого верха */
+    background-color: #fff; /* Цвет фона */
+    padding: 20px; /* Внутренние отступы для всего блока */
+    padding-right: 20px; /* Отступ справа для элементов внутри */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Тень для создания эффекта стены */
+    width: 250px; /* Ширина панели */
+    height: 100%; /* Высота, чтобы занять всё пространство */
+}
+
+.input-group,
+.key-access-group {
+    margin-bottom: 20px; /* Отступ между элементами */
+}
+
+.input-group label {
+    display: block; /* Обеспечивает, что метки на новой строке */
+    margin-bottom: 5px; /* Отступ снизу для метки */
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px); /* Ширина поля ввода, учитывая отступы */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #0066cc;
+}
+
+/* Основные стили для поиска */
+.main-search {
+    margin-left: 300px; /* Отделяем от боковой панели */
+    padding: 20px;
+}
+
+.search-container {
+    display: flex; /* Оставляем флекс-контейнер для горизонтального расположения */
+    align-items: center; /* Центруем элементы по вертикали */
+}
+
+input#searchTag {
+    flex: 1; /* Позволяет полю ввода занимать доступное пространство */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px; /* Добавляем отступ справа от поля ввода */
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* Основные стили для подписок */
 .subscription-plans {
     display: flex;
     justify-content: center;
@@ -75,6 +156,7 @@ nav ul li a:hover {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    border: 1px solid #e0e0e0; /* Добавляем рамку */
 }
 
 .plan:hover {
@@ -88,7 +170,7 @@ nav ul li a:hover {
 }
 
 .image-container {
-    border: 2px solid #ccc;
+    border: 2px solid #ccc; /* Рамка для изображения */
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -120,14 +202,6 @@ nav ul li a:hover {
     background-color: #005bb5;
 }
 
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #f0f2f5;
-    color: #666;
-    margin-top: 30px;
-}
-
 /* Стили для модального окна */
 .modal {
     display: none; /* Скрыто по умолчанию */
@@ -138,8 +212,7 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
     backdrop-filter: blur(5px);
-    z-index: 1; /* На переднем плане */
-    overflow: auto; /* Включает прокрутку */
+    z-index: 1000; /* На переднем плане */
 }
 
 .modal-content {
@@ -150,12 +223,10 @@ footer {
     width: 90%; /* Ширина окна */
     max-width: 600px; /* Максимальная ширина окна */
     border-radius: 10px; /* Закругление углов */
-    animation: slide-up 0.5s forwards; /* Анимация появления */
+    position: relative; /* Позволяет позиционировать элементы внутри */
+    top: 50%; /* Смещаем вниз на 50% */
+    transform: translateY(-50%); /* Сдвигаем вверх на 50% его высоты для центровки */
     text-align: center; /* Центрирование текста */
-    position: absolute;  /* Позиция для центрирования */
-    top: 50%; /* Вертикальная позиция */
-    left: 50%; /* Горизонтальная позиция */
-    transform: translate(-50%, -50%); /* Центрирование */
 }
 
 .modal-content h2 {
@@ -180,6 +251,21 @@ footer {
     cursor: pointer;
 }
 
+.button-link {
+    display: inline-block; /* Делаем элемент блочным, чтобы можно было добавить отступы */
+    background-color: #0066cc; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста */
+    padding: 12px 25px; /* Внутренние отступы для кнопки */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px; /* Закругление углов кнопки */
+    margin-top: 20px; /* Отступ сверху */
+    transition: background-color 0.3s; /* Плавный переход при наведении */
+}
+
+.button-link:hover {
+    background-color: #005bb5; /* Цвет фона кнопки при наведении */
+}
+
 /* Анимация появления модального окна */
 @keyframes slide-up {
     from {
@@ -190,20 +276,13 @@ footer {
     }
 }
 
-.telegram-link {
-    display: inline-block;
-    background-color: #0066cc;
-    color: #fff;
-    padding: 15px 30px; /* Увеличенные отступы */
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    margin-top: 20px; /* Отступ сверху */
-}
-
-.telegram-link:hover {
-    background-color: #005bb5;
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #f0f2f5;
+    color: #666;
+    margin-top: 30px;
 }
 
 /* Адаптивность */
@@ -222,6 +301,15 @@ footer {
         margin: 10px 0;
     }
 
+    .side-panel {
+        width: 100%; /* Ширина боковой панели на мобильном */
+        height: auto; /* Авто высота для мобильного */
+    }
+
+    .main-search {
+        margin-left: 0; /* Убираем отступы */
+    }
+
     .subscription-plans {
         flex-direction: column;
         align-items: center;
@@ -233,17 +321,19 @@ footer {
     }
 }
 
-/* Стили для логотипа */
-.logo {
-    display: flex;
-    align-items: center; /* Выравнивание по центру для текста и логотипа */
+/* Стили для шапки на странице Plus */
+.plus-page .header-container {
+    padding: 5px 30px; /* Уменьшаем padding для шапки */
 }
 
-.logo-image {
-    height: 50px; /* Установите высоту изображения */
-    margin-right: 10px; /* Отступ между логотипом и текстом */
+.plus-page .header-container h1 {
+    font-size: 20px; /* Уменьшаем размер заголовка */
 }
-.text-spacing {
-    display: block; /* Делает элемент блочным, чтобы создать отступы */
-    margin: 20px 0; /* Устанавливает отступы */
+
+.plus-page .header-container .logo-image {
+    height: 30px; /* Уменьшаем размер логотипа */
+}
+
+.plus-page nav ul li a {
+    font-size: 14px; /* Уменьшаем размер шрифта в навигации */
 }
