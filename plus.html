@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>MSGspam</title>
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="plus-page"> <!-- Добавляем класс для страницы Plus -->
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="logo.png" alt="Логотип msgspam" class="logo-image"> <!-- Логотип -->
+            <h1>MSGspam</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="purchase('Trial')">Trial</a></li>
+                <li><a href="#" onclick="purchase('Plus')">Plus</a></li>
+                <li><a href="#" onclick="purchase('Ultimate')">Ultimate</a></li>
+            </ul>
+        </nav>
+        <div class="telegram-button">
+            <a href="https://t.me/msgspam" target="_blank">
+                <img src="https://madbid.com/uploads/1708718087_.png" alt="Telegram" class="telegram-logo"> <!-- Логотип Telegram -->
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="side-panel">
+    <h2>Авторизация в VK</h2>
+    <div class="input-group">
+        <input type="text" id="username" placeholder="Введите ваш логин">
+    </div>
+    <div class="input-group">
+        <input type="password" id="password" placeholder="Введите ваш пароль">
+    </div>
+    <h2>Ключ доступа</h2>
+    <div class="key-access-group">
+        <input type="password" id="keyAccess" placeholder="Введите ваш ключ доступа"> <!-- Изменяем на type="password" -->
+    </div>
+</div>
+
+<div class="main-search">
+    <label for="searchTag">Введите тег для поиска видео:</label>
+    <div class="search-container">
+        <input type="text" id="searchTag" placeholder="Тег для поиска">
+        <button onclick="searchVideos()">Найти</button>
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <a href="https://t.me/alexeiracu" class="telegram-link button-link">Связаться для покупки ключа доступа</a>
+        <p style="margin-top: 15px; font-size: 14px; color: #666;">
+            <a href="#" onclick="goToPlanPage()" style="color: #0066cc; text-decoration: underline;">Если у вас уже есть ключ доступа, перейдите на страницу с подпиской</a>
+        </p>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
